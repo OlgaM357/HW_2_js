@@ -8,7 +8,7 @@ let a = 5,
 let numSquare = 3;
 let _btn = 'hidden';
 let btn_ = 'visible';
-let num = 0;
+let num = 'нулю';
 let _display ='inline-block';
 // =============Присваивание======
 //записать в коротком виде
@@ -21,6 +21,7 @@ console.log(x += a, y *= z, i *= 5 * y);
 console.log(numSquare *= numSquare);
 
 // =============Условные операторы============
+// используем строгое равенство
 if (_btn === 'hidden') console.log(_btn = 'visible');
 else console.log(_btn = 'hidden');
 
@@ -28,18 +29,28 @@ btn_ = (btn_ === 'hidden')?  console.log(_btn = 'visible') : console.log(_btn = 
 
 
 
-if (num === 0){
+// проверка на null, 'null' нулю, если да то = 0
+if(num == null || num == 'null' || num == 'нулю'){
+    num =0;
+}
+// приведение '0' к 0
+num = +num;
+// проверка условий задачи
+if (num === 0 ){
     console.log(num = 1);
-} else if (num < 0) {
+} else if (num < 0 ) {
     console.log(num = 'less then zero');
-}   else {
+}   else if (num > 0){
     console.log(num *= 10);
 }
-
+//тернар с короткой записью(1 вариант)
 (num === 0)?  console.log(num = 1) : (num < 0)? console.log('less then zero') : console.log(num *= 10);
+
+//тернар с присвоением переменной(2 вариант)
 num = (num === 0)? 1 : (num < 0)? 'less then zero' : num * 10;
 console.log(num);
-// =============Switch case================
+
+// =============Switch================
 switch (_display) {
     case 'block' :
         console.log('block');
