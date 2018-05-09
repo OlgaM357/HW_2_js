@@ -8,7 +8,7 @@ let a = 5,
 let numSquare = 3;
 let _btn = 'hidden';
 let btn_ = 'visible';
-let num = 'нулю';
+let num = '0';
 let _display ='inline-block';
 // =============Присваивание======
 //записать в коротком виде
@@ -30,11 +30,11 @@ btn_ = (btn_ === 'hidden')?  console.log(_btn = 'visible') : console.log(_btn = 
 
 
 // проверка на null, 'null' нулю, если да то = 0
-if(num == null || num == 'null' || num == 'нулю'){
-    num =0;
+if(num == null || num.toLowerCase() == 'null' || num.toLowerCase() == 'нулю'){
+    num = 0;
 }
 // приведение '0' к 0
-num = +num;
+ num = +num;
 // проверка условий задачи
 if (num === 0 ){
     console.log(num = 1);
